@@ -16,11 +16,13 @@
 
 </head>
 <body>
-<h1>Elana's Character Counter</h1>
-<section>
+  <div class="title">
+    <h1>Elana's Character Counter</h1>
+  </div>
+<section class="content">
   <p>This is a simple character counter created for my friend <a href="http://fontlovestudio.com/about/">Elana</a>, a phenomenal letterpress printer. Type or paste a selection of text, then click the "Count" button to see how often each character entered is used!</p> 
 
-</section>
+
 <form>
   <textarea id="submission" name="text" rows="10" cols="30"></textarea>
 </form>
@@ -54,6 +56,6 @@ function counter(){
   document.getElementById("counter_result").innerHTML = finalArray.join("<br />");
 };
 </script>
-
+</section>
 </body>
 </html>

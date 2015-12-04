@@ -1,14 +1,34 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin: 2.5em;
+  background-image: url("seafoam-cardstock.jpg");
+}
+
+.content {
+  background-image: url("cream-cardstock.jpg");
+  padding: 2.5em;
 }
 
 h1 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 3em;
-  text-align: auto;
+  text-align: center;
 }
 
 p {
   font-family: 'Crimson Text', serif;
+  font-size: 1.25em;
+}
+
+form {
+
+}
+
+button {
+  background-image: url("seafoam-cardstock.jpg");
+  font-family: 'Fredericka the Great', cursive;
   font-size: 1.25em;
 }
