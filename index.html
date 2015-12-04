@@ -15,7 +15,40 @@
 <section>
   My friend <a href:"http://fontlovestudio.com/about/">Elana</a> is a phenomonal letterpress printer. She asked me if I knew of any online tools that would count the number of each character in a string of text, so she would know whether she had enough characters in the desired font to print it. I decided to create this tool as a solution to that problem. Let me know if you'd like for me to add anything else to this tool! 
 </section>
+<form>
+  <textarea id="submission" name="text" rows="10" cols="30">
+  </textarea>
+</form>
+<br><br>
+<button onclick="counter()">Count</button>
 
+<p id="counter_result"></p>
+
+<script>
+function counter(){
+  var string = document.getElementById("submission").value;
+  var stringMinusSpaces =  string.replace(/ /g,"");
+  var finalArray = ['Total characters (minus spaces): ' + stringMinusSpaces.length];
+  var textArray = stringMinusSpaces.split("").sort();
+  var current = null;
+  var cnt = 0;
+  for (var i = 0; i < textArray.length; i++) {
+    if (textArray[i] != current) {
+      if (cnt > 0) {
+        finalArray.push(current + ' : ' + cnt);
+            }
+            current = textArray[i];
+            cnt = 1;
+        } else {
+            cnt++;
+        }
+    }
+      if (cnt > 0) {
+        finalArray.push(current + ' : ' + cnt);
+    }
+  document.getElementById("demo").innerHTML = finalArray.join("<br />");
+};
+</script>
 
 </body>
 </hmtl>
