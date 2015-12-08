@@ -9,7 +9,13 @@ body {
 
 .content {
   background-image: url("cream-cardstock.jpg");
-  padding: 2.5em;
+  /*padding: 1em 2.5em;*/
+  border-style: ridge none groove none;
+  border-color: #78C0D8;
+}
+
+#counter_result {
+  text-align: center;
 }
 
 h1 {
@@ -19,16 +25,47 @@ h1 {
 }
 
 p {
-  font-family: 'Crimson Text', serif;
-  font-size: 1.25em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.4em;
 }
 
-form {
-
+#form, .form-actions{
+  display:flex;
 }
 
-button {
+form, #count-button, #reset-button{
+  margin: auto;
+}
+
+#count-button {
   background-image: url("seafoam-cardstock.jpg");
   font-family: 'Fredericka the Great', cursive;
   font-size: 1.25em;
+  border-color: #78C0D8;
+}
+
+#reset-button {
+  border: 0px;
+  background: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.4em;
+  cursor:pointer;
+  color: #5E28C9;
+}
+
+.description {
+  width: 75%;
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #5E28C9;
+}
+
+textarea {
+  border-style: groove;
+  border-width: .25em;
+  border-color: #5E28C9;
 }

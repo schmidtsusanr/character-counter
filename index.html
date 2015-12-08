@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
   <link type="text/css" rel="stylesheet" href="index.css"/>
-  <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica' rel='stylesheet' type='text/css'>
-
   <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
   <title>Elana's Character Counter</title>
   <meta charset="utf-8">
 <!--[if lt IE 9]>
@@ -20,21 +18,28 @@
     <h1>Elana's Character Counter</h1>
   </div>
 <section class="content">
-  <p>This is a simple character counter created for my friend <a href="http://fontlovestudio.com/about/">Elana</a>, a phenomenal letterpress printer. Type or paste a selection of text, then click the "Count" button to see how often each character entered is used!</p> 
-
-
+  <div class="description">
+  <p>This is a simple character counter created for my friend <a href="http://fontlovestudio.com/about/" target="_blank">Elana</a>, a phenomenal letterpress printer. Type or paste a selection of text into the form below, then click the "Count" button to see how often each character is used!</p> 
+</div>
+<div id="form">
 <form>
-  <textarea id="submission" name="text" rows="10" cols="30"></textarea>
+  <textarea id="submission" name="text" rows="15" cols="80"></textarea>
 </form>
+</div>
 <br><br>
-<button onclick="counter()">Count</button>
-
+<div class="form-actions">
+<button id="count-button" onclick="counter()">Count</button>
+</div>
+<div class="form-actions">
+<button id="reset-button" onclick="reset()">~reset~</button>
+</div>
 <p id="counter_result"></p>
-
+</div>
 <script>
 function counter(){
   var string = document.getElementById("submission").value;
-  var stringMinusSpaces =  string.replace(/ /g,"");
+  var stringMinusNewLines = string.replace(/\r?\n|\r/g,"");
+  var stringMinusSpaces =  stringMinusNewLines.replace(/ /g,"");
   var finalArray = ['Total characters (minus spaces): ' + stringMinusSpaces.length];
   var textArray = stringMinusSpaces.split("").sort();
   var current = null;
@@ -54,8 +59,30 @@ function counter(){
         finalArray.push(current + ' : ' + cnt);
     }
   document.getElementById("counter_result").innerHTML = finalArray.join("<br />");
+  
+};
+
+function reset(){
+  document.getElementById('submission').value='';
+  document.getElementById('counter_result').innerHTML='';
 };
 </script>
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+//   // $("#count-button").click(function() {
+//   //     $('html,body').animate({
+//   //         scrollTop: $("#form").offset().top},
+//   //         'fast');
+//   // });
+
+//   function scrollToDiv(divid){
+//   var divName = $("div[id='"+ divid +"']");
+//   $('html,body').animate({scrollTop: divName.offset().top},'fast');
+// }
+//   $("#count-button").click(function() {
+//    scrollToDiv('form');
+// });
+// </script>
 </section>
 </body>
 </html>
